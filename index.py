@@ -5,6 +5,13 @@ from pong import pong_game
 import os
 from pystyle import *
 
+name = os.name
+if name == "nt":
+    command = "cls"
+
+elif name== "posix":
+    command = "clear"
+
 banner1 = """              
                         .__          __    __          
     _______  ____  __ __|  |   _____/  |__/  |_  ____  
@@ -67,7 +74,7 @@ tictactoe_banner = """
 
 banners = [banner1, banner2, banner3, banner4]
 def banner():
-    os.system('cls')
+    os.system(command)
     print(Colorate.Horizontal(Colors.blue_to_green ,(Center.XCenter(choice(banners)))))
 banner()
 
@@ -88,20 +95,20 @@ def restart():
     print(Colorate.Horizontal(Colors.cyan_to_blue, "Do you want restart ? (y/n)"))
     terminal_restart = input(Colorate.Horizontal(Colors.green_to_red, ">>>>     "))
     if terminal_restart == "yes":
-        os.system('cls')
+        os.system(command)
         banner()
         game_roulette()
     elif terminal_restart == "y":
-        os.system('cls')
+        os.system(command)
         banner()
         game_roulette()
     elif terminal_restart == "no":
         Colorate.Horizontal("okay",Colors.green)
-        os.system('cls')
+        os.system(command)
         banner()
     elif terminal_restart == "n":
         Colorate.Horizontal("okay",Colors.green)
-        os.system('cls')
+        os.system(command)
         banner()
     else:
         Write.Print("ERROR ", Colors.red_to_yellow, interval=0.05)
@@ -110,7 +117,6 @@ def restart():
 def game_roulette():
     roulette = randint(1,6)
     choix = int(Write.Input("Pick a number:    ", Colors.red_to_purple, interval=0.05))
-
     if choix <= 6:
         if choix == roulette:
             Write.Print( "PAN !", Colors.red_to_yellow, interval=0.05)
@@ -119,7 +125,7 @@ def game_roulette():
             Write.Print(".   .   .", Colors.red_to_yellow, interval=0.10)
             print(" ")
             print(" ")
-            Write.Print(Colors.red_to_yellow, "You're dead !", interval=0.05)
+            Write.Print("You're dead !", Colors.red_to_yellow,  interval=0.05)
             print(" ")
             restart()
         elif choix != roulette:
@@ -150,15 +156,15 @@ while terminal_alive == True:
     elif terminal_input == "help":
         help_message()
     elif terminal_input == "start":
-        os.system("cls")
+        os.system(command)
         banner()
         game_roulette()
     elif terminal_input == "play":
-        os.system("cls")
+        os.system(command)
         banner()
         game_roulette()
     elif terminal_input == "roulette":
-        os.system("cls")
+        os.system(command)
         banner()
         game_roulette()
     elif terminal_input == "tictactoe":
@@ -173,6 +179,7 @@ while terminal_alive == True:
         print(" ")
         Write.Print("You can also try the command 'pong'", Colors.all_colors, interval=0.05)
     elif terminal_input == "quit":
+        os.system(command)
         break
     else:
         Write.Print("ERROR ", Colors.red_to_yellow, interval=0.05)
