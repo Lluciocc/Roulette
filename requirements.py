@@ -18,7 +18,7 @@ while True:
         os.system("python3 -m pip install --upgrade pip")
         print("INSTALL REQUIREMENTS")
         os.system("pip install pystyle")
-        os.system("pip install time")
+        os.system("pip install keyboard")
         print("Requirements install sucefully !")
         launchTool()
            
