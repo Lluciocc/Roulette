@@ -155,6 +155,17 @@ while terminal_alive == True:
         help_message()
     elif terminal_input == "help":
         help_message()
+    elif terminal_input == "os":
+        if name == "posix":
+            Write.Print("Linux", Colors.blue_to_green, interval=0.05)
+            print(" ")
+            print(" ")
+        elif name == "nt":
+            Write.Print("Windows", Colors.blue_to_green, interval=0.05)
+            print(" ")
+            print(" ")
+        else:
+            Write.Print("wtf", Colors.red_to_yellow, interval=0.05)
     elif terminal_input == "start":
         os.system(command)
         banner()
