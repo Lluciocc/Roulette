@@ -4,6 +4,9 @@ from tictactoe import TicTacToe
 from pong import pong_game
 import os
 from pystyle import *
+import sys
+
+sys.stdout.write("\x1b]2;Roulette game\x07")
 
 name = os.name
 if name == "nt":
