@@ -11,6 +11,7 @@ git clone https://github.com/Lluciocc/Roulette.git
 ```
 
 After clone the project:
+
 LINUX
 ```
 sudo python3 requirements.py
