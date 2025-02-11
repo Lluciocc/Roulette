@@ -3,7 +3,7 @@
 </p>
 
 ## 🔥 Roulette
-Roulette game for fun 
+Russian roulette game for fun 
 
 ## ❤️ Install 
 ```
